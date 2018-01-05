@@ -5,6 +5,8 @@ $sql1= "SELECT * FROM user";
 $con = conectar();
 $result = mysqli_query($con, $sql1);
 //se despliega el resultado  
+
+//primero se establece una base de table
 echo "<table>";  
 echo "<tr>";  
 echo "<th>id usuario</th>";  
@@ -17,6 +19,8 @@ echo "<th>email</th>";
 echo "<th>password</th>";  
 echo "<th>created_at</th>"; 
 echo "</tr>";  
+
+//foreach simple el cual replicara con echo las columnas traidas desde la base de datos
 if ($result = mysqli_query($con, $sql1)) {
 while ($row = mysqli_fetch_row($result)){   
     echo "<tr>";  
