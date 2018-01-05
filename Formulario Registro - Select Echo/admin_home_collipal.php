@@ -1,9 +1,13 @@
 <?php
 session_start();
+//Isset me ayuda a evaluar si una variable esta definida y no null
+//evaluacion de primer session
 if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 	print "<script>alert(\"Acceso invalido!\");window.location='login.php';</script>";
 }
+//evaluacion de SESSION especifico como lo puede ser un admin
 if(!isset($_SESSION["admin_id"]) || $_SESSION["admin_id"]!="collipal"){
+//print de un javascript basico redirigiendo a X pagina
   print "<script>alert(\"Acceso invalido!\");window.location='login.php';</script>";
 }
 
